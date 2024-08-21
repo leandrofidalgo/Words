@@ -10,18 +10,25 @@ class HomeController extends Controller
     {
         $client = new \GuzzleHttp\Client();
 
-        $response = $client->request('GET', 'https://wordsapiv1.p.rapidapi.com/words/lovely/synonyms', [
+        // $response = $client->request('GET', 'https://wordsapiv1.p.rapidapi.com/words/lovely/synonyms', [
+        //     'headers' => [
+        //         'x-rapidapi-host' => 'wordsapiv1.p.rapidapi.com',
+        //         'x-rapidapi-key' => '36e7b9b593msh943dcee37d146d1p1ee465jsn3e0f8061dd40',
+        //     ],
+        //     'verify' => storage_path('cacert.pem'),
+        // ]);
+        // $data = json_decode($response->getBody(), true);
+
+        $response = $client->request('GET', 'https://api.datamuse.com/words?rel_syn=animals', [
             'headers' => [
-                'x-rapidapi-host' => 'wordsapiv1.p.rapidapi.com',
-                'x-rapidapi-key' => '36e7b9b593msh943dcee37d146d1p1ee465jsn3e0f8061dd40',
             ],
             'verify' => storage_path('cacert.pem'),
         ]);
-        $data = json_decode($response->getBody(), true);
+        dump($response);
 
 
-        return inertia('Home', [
-             'synonyms' => $data
-        ]);
+        // return inertia('Home', [
+        //      'synonyms' => $data
+        // ]);
     }
 }
