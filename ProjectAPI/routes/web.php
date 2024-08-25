@@ -15,3 +15,4 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/gamedefinitions', [\App\Http\Controllers\HomeController::class, 'definitionsGame']);

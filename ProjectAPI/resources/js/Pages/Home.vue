@@ -3,7 +3,7 @@
     <nav>
       <ul class="menu">
         <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/search">Search</router-link></li>
+        <li><router-link to="/gamedefinitions">Definitions Game</router-link></li>
         <li><router-link to="/synonyms">Synonyms</router-link></li>
         <li><router-link to="/about">About</router-link></li>
       </ul>
@@ -21,9 +21,6 @@
 <script>
 export default {
   name: "Home",
-  props: {
-    synonyms: Array
-  }
 }
 </script>
 
